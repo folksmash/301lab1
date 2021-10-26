@@ -1,5 +1,6 @@
 import React from 'react';
 import HornedBeast from './HornedBeasts'
+import Data from './Data.json'
 
 
 class Main extends React.Component {
