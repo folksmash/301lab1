@@ -1,6 +1,7 @@
 import { Component } from "react";
 import HornedBeasts from "./HornedBeasts";
 
+import data from "./Data.json";
 
 
 class Main extends Component {
@@ -8,6 +9,7 @@ class Main extends Component {
     return (
       <>
         {this.props.data.map((animal) => (
+        {data.map((animal) => (
           <HornedBeasts
             title={animal.title}
             imageURL={animal.image_url}
@@ -15,6 +17,7 @@ class Main extends Component {
             keyword={animal.keyword}
             horns={animal.horns}
             showModal={this.props.showModal}
+
           />
         ))}
       </>

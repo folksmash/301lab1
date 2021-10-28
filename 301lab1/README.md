@@ -72,6 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
+
 Number and name of feature: Feature #1: Display a Modal
 
 Estimate of time needed to complete: 2 hours

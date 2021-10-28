@@ -1,5 +1,4 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,6 +19,7 @@ class HornedBeast extends React.Component {
   handleClick = () => {
     this.setState({ count: this.state.count + 1 });
   };
+
   showModal = () => {
     this.props.showModal(this.props.title);
   };
