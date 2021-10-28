@@ -20,6 +20,10 @@ class HornedBeast extends React.Component {
     this.setState({ count: this.state.count + 1 });
   };
 
+  showModal = () => {
+    this.props.showModal(this.props.title);
+  };
+
   render() {
 
     return (

@@ -1,11 +1,14 @@
 import { Component } from "react";
 import HornedBeasts from "./HornedBeasts";
+
 import data from "./Data.json";
+
 
 class Main extends Component {
   render() {
     return (
       <>
+        {this.props.data.map((animal) => (
         {data.map((animal) => (
           <HornedBeasts
             title={animal.title}
@@ -13,6 +16,8 @@ class Main extends Component {
             description={animal.description}
             keyword={animal.keyword}
             horns={animal.horns}
+            showModal={this.props.showModal}
+
           />
         ))}
       </>
