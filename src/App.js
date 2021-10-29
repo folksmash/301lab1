@@ -7,23 +7,34 @@ import Beastselect from './Beastselect.js';
 import data from "./Data.json";
 
 export default class App extends Component {
-  
-  
-=======
+  constructor(props){
+    super(props)
+    this.state = {
+      show: true,
+      featuredBeast: {}
+    }
+  }
+  handleClose = () => {
+    this.setState({ show: false })
+  }
 
-export default class App extends Component {
-
+openModal = ()  => {
+  this.setState({show: true})
+} 
+  updateBeast = (data) => {
+    this.setState(
+      {featuredBeast: data}
+    )
+    this.openModal();
+  }
   render() {
     return (
       <div>
         {/* header! any expression that has to be evaluated needs to go inside of curly brackets - anything javascripty*/}
         <Header /> 
-
-        <Main data = {data}/>
+        <Main updateBeast={this.updateBeast} data = {data}/>
         <Footer  />
-        <Beastselect show = {'true'}/>
-        <Main />
-        <Footer  />
+        <Beastselect featuredBeast={this.state.featuredBeast} handleClose = {this.handleClose} show = {this.state.show}/>
       </div>
     )
   }

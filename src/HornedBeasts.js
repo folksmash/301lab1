@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
@@ -20,10 +21,11 @@ class HornedBeast extends React.Component {
     this.setState({ count: this.state.count + 1 });
   };
 
-  showModal = () => {
-    this.props.showModal(this.props.title);
-  };
-
+  handleBeast = () => {
+    console.log('during handle beast', this.props.updateBeast)
+    this.props.updateBeast(this.props.animal)
+  }
+ 
   render() {
 
     return (
@@ -34,14 +36,14 @@ class HornedBeast extends React.Component {
           src={this.props.imageURL}
           alt={this.props.keyword}
           title={this.props.title}
-          onClick={this.handleClick}></img>
+          onClick={this.handleBeast}></img>
           <Card.Body>
             <Card.Title> {this.props.title}</Card.Title>
             <Card.Img onClick={this.increaseCount} src={this.props.img} />
             <Card.Text>
               {this.props.disc}
             </Card.Text>
-            <Card.Text>
+            <Card.Text onClick={this.handleClick}>
               💖 {this.state.count}
             </Card.Text>
           </Card.Body>
