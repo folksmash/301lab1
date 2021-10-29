@@ -5,15 +5,15 @@ import Footer from './Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Beastselect from './Beastselect.js';
 import data from "./Data.json";
-import Hornform from "./Hornform.js";
+import HornForm from "./HornForm.js";
 
 export default class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       show: true,
-      featuredBeast: {}
-      
+      featuredBeast: {},
+      showBeasts: [],      
     }
   }
   
@@ -30,8 +30,7 @@ openModal = ()  => {
     )
     this.openModal();
   };
-
-
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else referenced for filterBeasts array loop.//
   filterBeasts = (selection) => {
     let hornNum = selection;
     let hornsArray;
@@ -49,13 +48,12 @@ openModal = ()  => {
     }
   };
 
-
   render() {
     return (
       <div>
         <Header />
-        <Hornform filterBeasts={this.filterBeasts}/>
-        <Main updateBeast={this.updateBeast} data = {data}/>
+        <HornForm filterBeasts={this.filterBeasts}/>
+        <Main updateBeast={this.updateBeast} data={this.state.showBeasts ? this.state.showBeasts : data}/>
         <Footer  />
         <Beastselect featuredBeast={this.state.featuredBeast} handleClose = {this.handleClose} show = {this.state.show}/>
       </div>

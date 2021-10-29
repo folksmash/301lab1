@@ -5,6 +5,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 export default class HornForm extends Component {
   handleChange = (event) => {
     let selection = event.target.value;
+    console.log('handlechange', selection)
     this.props.filterBeasts(selection);
   };
 
